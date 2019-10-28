@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   _setCatchNum(event) {
-    let num = event.target.value;
+    const num = event.target.value;
     this.setState({
       catchNum: num
     });
