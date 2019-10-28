@@ -15,8 +15,15 @@ const Header = (props) => (
     </div>
     <div className="l-right">
       <div className="l-col">
-        <button value={MODE.MANY} onClick={props.setCatchNum}>Catch {MODE.MANY}</button>
-        <button value={MODE.ONE} onClick={props.setCatchNum}>Catch {MODE.ONE}</button>
+      {
+        props.loading ?
+          <span>Loading pokemons...</span>
+        :
+          <span>
+            <button value={MODE.MANY} onClick={props.setCatchNum}>Catch {MODE.MANY}</button>
+            <button value={MODE.ONE} onClick={props.setCatchNum}>Catch {MODE.ONE}</button>
+          </span>
+      }
       </div>
     </div>
   </header>
