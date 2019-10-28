@@ -2,11 +2,19 @@ import React from 'react';
 
 const Sidebar = (props) => {
   const pokemonsNumber = props.pokemons.length;
+  let pokemons = Object.assign({}, props.pokemons);
   let pokemonsShuffle = [];
-  for (let i = 0; i < props.catchNum; i++) {
+  for (let i = 0; pokemonsShuffle.length < props.catchNum; i++) {
     // index from 0 to pokemonsNumber-1
-    const randomIndex = Math.floor(Math.random()*pokemonsNumber);
-    pokemonsShuffle.push(props.pokemons[randomIndex]);
+    let randomIndex = Math.floor(Math.random()*pokemonsNumber);
+    if (pokemons[randomIndex]) {
+      pokemonsShuffle.push(pokemons[randomIndex]);
+      // remove it from the list to not catch it twice
+      pokemons[randomIndex] = null;
+    } else {
+      // re-catch
+      randomIndex = Math.floor(Math.random()*pokemonsNumber);
+    }
   }
 
   const pokemonList = pokemonsShuffle.map((pokemon, index) =>
