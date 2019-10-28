@@ -26,8 +26,8 @@ class App extends Component {
   render() {
     return (
       <div className="App l-col">
-        <Header {...this.state} setCatchNum={this._setCatchNum}/>
-        { this.state.loading ? '' : <Main {...this.state}/> }
+        <Header {...this.state}/>
+        <Main {...this.state} setCatchNum={this._setCatchNum}/>
       </div>
     )
   }

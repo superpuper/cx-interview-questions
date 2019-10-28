@@ -8,6 +8,7 @@ const Sidebar = (props) => {
 
   return (
     <div className="Sidebar l-col">
+      <button value={props.modes.MANY} onClick={props.setCatchNum}>Catch {props.modes.MANY}</button>
       <ul>
         {pokemonList}
       </ul>

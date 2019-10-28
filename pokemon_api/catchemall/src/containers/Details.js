@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Details = () => (
+const Details = (props) => (
   <div className="Details l-col">
-    Details
+    <button>Catch {props.modes.ONE}</button>
+    <div>
+      Details
+    </div>
   </div>
 );
 

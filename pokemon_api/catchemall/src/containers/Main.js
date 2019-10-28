@@ -6,10 +6,10 @@ import Details from 'containers/Details';
 const Main = (props) => (
   <div className="Main l-row">
     <div className="l-left">
-      <Sidebar {...props}/>
+      { props.loading ? <div className="l-col">Loading pokemons...</div> : <Sidebar {...props}/> }
     </div>
     <div className="l-right">
-      <Details/>
+      { props.loading ? null : <Details {...props}/> }
     </div>
   </div>
 );

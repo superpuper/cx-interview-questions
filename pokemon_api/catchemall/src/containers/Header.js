@@ -8,19 +8,6 @@ const Header = (props) => (
         <img className="Header__logo" src={logo}  alt="Pokemon Api" />
       </div>
     </div>
-    <div className="l-right">
-      <div className="l-col">
-      {
-        props.loading ?
-          <span>Loading pokemons...</span>
-        :
-          <span>
-            <button value={props.modes.MANY} onClick={props.setCatchNum}>Catch {props.modes.MANY}</button>
-            <button value={props.modes.ONE} onClick={props.setCatchNum}>Catch {props.modes.ONE}</button>
-          </span>
-      }
-      </div>
-    </div>
   </header>
 );
 
