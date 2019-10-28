@@ -1,9 +1,16 @@
 import React from 'react';
 
 const Sidebar = (props) => {
-  const pokemons = props.pokemons.slice(0, props.catchNum);
-  const pokemonList = pokemons.map((pokemon, i) =>
-    <PokemonListItem key={i}
+  const pokemonsNumber = props.pokemons.length;
+  let pokemonsShuffle = [];
+  for (let i = 0; i < props.catchNum; i++) {
+    // index from 0 to pokemonsNumber-1
+    const randomIndex = Math.floor(Math.random()*pokemonsNumber);
+    pokemonsShuffle.push(props.pokemons[randomIndex]);
+  }
+
+  const pokemonList = pokemonsShuffle.map((pokemon, index) =>
+    <PokemonListItem key={index}
       value={pokemon.name} />
   );
 
