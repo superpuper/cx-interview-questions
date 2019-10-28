@@ -6,13 +6,18 @@ import Main from 'containers/Main';
 
 import config from 'config';
 
+const modes = {
+  ONE: 1,
+  MANY: 10,
+}
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       loading: true,
       pokemons: [],
-      catchNum: null,
+      catchNum: modes.MANY,
     }
     this._setCatchNum = this._setCatchNum.bind(this);
   }
@@ -20,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App l-col">
-        <Header {...this.state} setCatchNum={this._setCatchNum}/>
+        <Header {...this.state} modes={modes} setCatchNum={this._setCatchNum}/>
         { this.state.loading ? '' : <Main {...this.state}/> }
       </div>
     )

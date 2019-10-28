@@ -1,11 +1,6 @@
 import React from 'react';
 import logo from 'images/logo.png';
 
-const MODE = {
-  ONE: 1,
-  MANY: 10,
-}
-
 const Header = (props) => (
   <header className="Header l-row">
     <div className="l-left">
@@ -20,8 +15,8 @@ const Header = (props) => (
           <span>Loading pokemons...</span>
         :
           <span>
-            <button value={MODE.MANY} onClick={props.setCatchNum}>Catch {MODE.MANY}</button>
-            <button value={MODE.ONE} onClick={props.setCatchNum}>Catch {MODE.ONE}</button>
+            <button value={props.modes.MANY} onClick={props.setCatchNum}>Catch {props.modes.MANY}</button>
+            <button value={props.modes.ONE} onClick={props.setCatchNum}>Catch {props.modes.ONE}</button>
           </span>
       }
       </div>
