@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Details = () => (
-  <div className="Details">
+  <div className="Details l-col">
     Details
   </div>
 );

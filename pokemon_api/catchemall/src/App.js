@@ -5,7 +5,7 @@ import Header from 'containers/Header';
 import Main from 'containers/Main';
 
 const App = () => (
-  <div className="App">
+  <div className="App l-col">
     <Header/>
     <Main/>
   </div>

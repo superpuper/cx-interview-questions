@@ -1,4 +1,37 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+}
+
+/* l- layout */
+.l-row {
+  display: flex;
+}
+
+.l-col {
+  height: 100%;
+  max-width: 100%;
+}
+
+.l-left {
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+.l-right {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.l-left .l-col {
+  width: 400px;
+}
+
+.l-right .l-col {
+  width: 600px;
 }
