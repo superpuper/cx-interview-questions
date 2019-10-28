@@ -17,6 +17,7 @@ class App extends Component {
     this.state = {
       loading: true,
       pokemons: [],
+      modes,
       catchNum: modes.MANY,
     }
     this._setCatchNum = this._setCatchNum.bind(this);
@@ -25,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App l-col">
-        <Header {...this.state} modes={modes} setCatchNum={this._setCatchNum}/>
+        <Header {...this.state} setCatchNum={this._setCatchNum}/>
         { this.state.loading ? '' : <Main {...this.state}/> }
       </div>
     )
