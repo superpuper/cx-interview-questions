@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App l-col">
         <Header {...this.state} setCatchNum={this._setCatchNum}/>
-        { this.state.loading ? '' : <Main/> }
+        { this.state.loading ? '' : <Main {...this.state}/> }
       </div>
     )
   }
