@@ -4,7 +4,7 @@ import 'App.css';
 import Header from 'containers/Header';
 import Main from 'containers/Main';
 
-const POKEMONS_JSON_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+import config from 'config';
 
 class App extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(POKEMONS_JSON_URL)
+    fetch(config.POKEMONS_JSON_URL)
       .then(res => res.json())
       .then(res => this.setState({
         pokemons: res.results,
