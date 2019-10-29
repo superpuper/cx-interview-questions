@@ -12,7 +12,7 @@ const Main = (props) => {
         { props.loading ? <div className="l-col">Loading pokemons...</div> : <Sidebar {...props} setUrl={setUrl}/> }
       </div>
       <div className="l-right">
-        { props.loading ? null : <Details {...props} url={url}/> }
+        { props.loading ? null : <Details {...props} url={url} setUrl={setUrl}/> }
       </div>
     </div>
   )
