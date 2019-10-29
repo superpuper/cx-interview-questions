@@ -4,7 +4,7 @@ const Details = (props) => (
   <div className="Details l-col">
     <button>Catch {props.modes.ONE}</button>
     <div>
-      Details
+      {props.url}
     </div>
   </div>
 );

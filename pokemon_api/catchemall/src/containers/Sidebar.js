@@ -3,7 +3,9 @@ import React from 'react';
 const Sidebar = (props) => {
   const pokemonList = shuffle({...props}).map((pokemon, index) =>
     <PokemonListItem key={index}
-      value={pokemon.name} />
+      value={pokemon.name}
+      url={pokemon.url}
+      setUrl={props.setUrl} />
   );
 
   return (
@@ -17,7 +19,9 @@ const Sidebar = (props) => {
 }
 
 const PokemonListItem = (props) => (
-  <li>{props.value}</li>
+  <li>
+    <button onClick={() => props.setUrl(props.url)}>{props.value}</button>
+  </li>
 );
 
 const shuffle = ({pokemons, catchNum}) => {
