@@ -1,4 +1,8 @@
 export const shuffle = ({pokemons, catchNum}) => {
+  let savedShuffle = localStorage.getItem('pokemonsShuffle');
+  if (savedShuffle) {
+    return JSON.parse(savedShuffle);
+  }
   const pokemonsNumber = pokemons.length;
   let pokemonsCopy = Object.assign({}, pokemons);
   let pokemonsShuffle = [];
@@ -15,6 +19,7 @@ export const shuffle = ({pokemons, catchNum}) => {
       randomIndex = getRandomIndex(pokemonsNumber);
     }
   }
+  localStorage.setItem('pokemonsShuffle', JSON.stringify(pokemonsShuffle));
   return pokemonsShuffle;
 }
 

@@ -33,6 +33,8 @@ class App extends Component {
   }
 
   _setCatchNum(event) {
+    localStorage.removeItem('pokemonsShuffle');
+
     const num = event.target.value;
     this.setState({
       catchNum: num
