@@ -5,6 +5,7 @@ import Header from 'containers/Header';
 import Main from 'containers/Main';
 
 import config from 'config';
+import { shuffleRenew } from 'utils';
 
 const modes = {
   ONE: 1,
@@ -33,8 +34,7 @@ class App extends Component {
   }
 
   _setCatchNum(event) {
-    localStorage.removeItem('pokemonsShuffle');
-
+    shuffleRenew();
     const num = event.target.value;
     this.setState({
       catchNum: num
@@ -42,6 +42,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    shuffleRenew();
     fetch(config.POKEMONS_JSON_URL)
       .then(res => res.json())
       .then(res => this.setState({

@@ -23,6 +23,11 @@ export const shuffle = ({pokemons, catchNum}) => {
   return pokemonsShuffle;
 }
 
+export const shuffleRenew = () => {
+  localStorage.removeItem('pokemonsShuffle');
+}
+
+
 export const getStats = (rowStats) => {
   let stats = {
     speed: 0,
