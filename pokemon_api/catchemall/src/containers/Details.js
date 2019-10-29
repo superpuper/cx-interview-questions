@@ -11,7 +11,10 @@ const Details = (props) => {
     }
     fetch(props.url)
       .then(res => res.json())
-      .then(res => setPokemon(res));
+      .then(res => {
+        localStorage.setItem('lastPokemonUrl', props.url);
+        return setPokemon(res)
+      });
   }, [props.url]);
 
   const randomPokemon = () => {
