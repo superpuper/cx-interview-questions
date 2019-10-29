@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 
 const Details = (props) => {
+  const [pokemon, setPokemon] = useState({});
+
+  useEffect(() => {
+    if (!props.url) {
+      return;
+    }
+    fetch(props.url)
+      .then(res => res.json())
+      .then(res => setPokemon(res));
+  }, [props.url]);
+
   const randomPokemon = () => {
     const pokemonsNumber = props.pokemons.length;
     const getRandomIndex = (pokemonsNumber) => Math.floor(Math.random()*pokemonsNumber);
