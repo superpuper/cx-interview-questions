@@ -17,3 +17,25 @@ export const shuffle = ({pokemons, catchNum}) => {
   }
   return pokemonsShuffle;
 }
+
+export const getStats = (rowStats) => {
+  let stats = {
+    speed: 0,
+    defense: 0,
+    "special-defense": 0,
+    attack: 0,
+    "special-attack": 0,
+    hp: 0,
+  }
+
+  for (let statName in stats) {
+    for (let i = 0; i < rowStats.length; i++) {
+      if (rowStats[i].stat.name === statName) {
+        stats[statName] = rowStats[i].base_stat;
+        continue;
+      }
+    }
+  }
+
+  return stats;
+}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from 'react';
 
+import Pokemon from 'containers/Pokemon';
+
 const Details = (props) => {
-  const [pokemon, setPokemon] = useState({});
+  const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
     if (!props.url) {
@@ -22,9 +24,7 @@ const Details = (props) => {
   return (
     <div className="Details l-col">
       <button onClick={randomPokemon}>Catch {props.modes.ONE}</button>
-      <div>
-        {props.url}
-      </div>
+      { pokemon ? <Pokemon details={pokemon}/> : null }
     </div>
   )
 }

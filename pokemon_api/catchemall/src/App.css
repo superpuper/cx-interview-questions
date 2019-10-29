@@ -29,3 +29,17 @@
 .Details {
   background-color: #ef994a
 }
+
+.Pokemon__title {
+  display: flex;
+}
+
+.Pokemon__img {
+  width: 96px;
+  height: 96px;
+}
+
+.Pokemon__name {
+  width: 96px;
+  height: 96px;
+}
