@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { shuffle } from 'utils';
+
 const Sidebar = (props) => {
   const pokemonList = shuffle({...props}).map((pokemon, index) =>
     <PokemonListItem key={index}
@@ -23,26 +25,6 @@ const PokemonListItem = (props) => (
     <button onClick={() => props.setUrl(props.url)}>{props.value}</button>
   </li>
 );
-
-const shuffle = ({pokemons, catchNum}) => {
-  const pokemonsNumber = pokemons.length;
-  let pokemonsCopy = Object.assign({}, pokemons);
-  let pokemonsShuffle = [];
-  const getRandomIndex = (pokemonsNumber) => Math.floor(Math.random()*pokemonsNumber);
-  for (let i = 0; pokemonsShuffle.length < catchNum; i++) {
-    // index from 0 to pokemonsNumber-1
-    let randomIndex = getRandomIndex(pokemonsNumber);
-    if (pokemonsCopy[randomIndex]) {
-      pokemonsShuffle.push(pokemonsCopy[randomIndex]);
-      // remove it from the list to not catch it twice
-      pokemonsCopy[randomIndex] = null;
-    } else {
-      // re-throw
-      randomIndex = getRandomIndex(pokemonsNumber);
-    }
-  }
-  return pokemonsShuffle;
-}
 
 export default Sidebar;
 
