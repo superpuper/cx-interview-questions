@@ -12,8 +12,8 @@ const Sidebar = (props) => {
 
   return (
     <div className="Sidebar l-col">
-      <button value={props.modes.MANY} onClick={props.setCatchNum}>Catch {props.modes.MANY}</button>
-      <ul>
+      <button className="Sidebar__catch" value={props.modes.MANY} onClick={props.setCatchNum}>Catch {props.modes.MANY}</button>
+      <ul className="Sidebar__list">
         {pokemonList}
       </ul>
     </div>
@@ -22,7 +22,7 @@ const Sidebar = (props) => {
 
 const PokemonListItem = (props) => (
   <li>
-    <button onClick={() => props.setUrl(props.url)}>{props.value}</button>
+    <button className="Sidebar__item" onClick={() => props.setUrl(props.url)}>{props.value}</button>
   </li>
 );
 

@@ -23,15 +23,67 @@
 }
 
 .Sidebar {
+  text-align: center;
   background-color: #3a80ed;
 }
 
+.Sidebar__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Sidebar__catch {
+  position: absolute;
+  top: 10px;
+  width: 160px;
+}
+
+.Sidebar__catch,
+.Sidebar__item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #5491e3;
+  border: none;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.Sidebar__item {
+  width: 80%;
+}
+
 .Details {
-  background-color: #ef994a
+  background-color: #ef994a;
+}
+
+.Details__catch {
+  position: absolute;
+  top: 10px;
+  width: 160px;
+  margin-left: 40px;
+}
+
+.Details__block,
+.Pokemon__block {
+  padding: 10px;
+  background-color: #e7a468;
+  border: none;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.Pokemon {
+  padding: 20px 35px;
 }
 
 .Pokemon__title {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Pokemon__name {
+  padding: 10px 3em;
 }
 
 .Pokemon__img {
@@ -39,7 +91,11 @@
   height: 96px;
 }
 
-.Pokemon__name {
-  width: 96px;
-  height: 96px;
+.Pokemon__block {
+  text-align: center;
+}
+
+.Pokemon__block-line {
+  padding: 1em 0;
+  text-transform: uppercase;
 }

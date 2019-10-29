@@ -23,7 +23,7 @@ const Details = (props) => {
 
   return (
     <div className="Details l-col">
-      <button onClick={randomPokemon}>Catch {props.modes.ONE}</button>
+      <button className="Details__catch Details__block" onClick={randomPokemon}>Catch {props.modes.ONE}</button>
       { pokemon ? <Pokemon details={pokemon}/> : null }
     </div>
   )

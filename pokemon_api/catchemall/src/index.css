@@ -4,7 +4,11 @@ html, body {
 }
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font: 24px Arial, sans-serif;
+}
+button {
+  font-size: 100%;
+  outline: none;
 }
 
 /* l- layout */
